@@ -1,0 +1,21 @@
+Description: Fix using collections
+ Thist patch fixes this, which is threated as error:
+ /<<PKGBUILDDIR>>/.pybuild/cpython3_3.9_google-auth/build/google/auth/jwt.py:221:
+ DeprecationWarning: Using or importing the ABCs from 'collections' instead of
+ from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop
+ working.
+Author: Thomas Goirand <zigo@debian.org>
+Forwarded: not-needed
+Last-Update: 2021-01-04
+
+--- python-google-auth-1.5.1.orig/google/auth/jwt.py
++++ python-google-auth-1.5.1/google/auth/jwt.py
+@@ -218,7 +218,7 @@ def decode(token, certs=None, verify=Tru
+ 
+     # If certs is specified as a dictionary of key IDs to certificates, then
+     # use the certificate identified by the key ID in the token header.
+-    if isinstance(certs, collections.Mapping):
++    if isinstance(certs, collections.abc.Mapping):
+         key_id = header.get('kid')
+         if key_id:
+             if key_id not in certs:

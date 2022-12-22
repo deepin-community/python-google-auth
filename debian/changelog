@@ -1,0 +1,55 @@
+python-google-auth (1.5.1-3) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Thomas Goirand ]
+  * Add patches (Closes: #977087):
+    - fix-unit-test-using-collections.patch
+    - remove_test__load_credentials_from_file_authorized_user_cloud_sdk.patch
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 04 Jan 2021 14:51:12 +0100
+
+python-google-auth (1.5.1-2) unstable; urgency=medium
+
+  * Team upload.
+  * Use debhelper-compat instead of debian/compat.
+  * Use pybuild to build package.
+  * Bump debhelper compat level to 12.
+  * Bump standards version to 4.4.0 (no changes).
+  * Drop Python 2 support (Closes: #937799).
+  * Disable tests with internet access.
+
+ -- Ondřej Nový <onovy@debian.org>  Tue, 03 Sep 2019 10:46:37 +0200
+
+python-google-auth (1.5.1-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Ondřej Nový ]
+  * Removing gbp.conf, not used anymore or should be specified in the
+    developers dotfiles
+  * d/control: Add trailing tilde to min version depend to allow
+    backports
+  * d/control: Fix wrong Vcs-*
+  * Running wrap-and-sort -bast
+  * d/control: Use team+openstack@tracker.debian.org as maintainer
+
+  [ Christoph Berg ]
+  * New upstream version.
+    + Fixes AssertionError: Pattern 'Incorrect padding' not found.
+      (Closes: #909993)
+
+ -- Christoph Berg <myon@debian.org>  Mon, 08 Oct 2018 21:35:19 +0200
+
+python-google-auth (1.3.0-2) unstable; urgency=medium
+
+  * Reviewed build and runtime depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 26 Feb 2018 21:11:35 +0100
+
+python-google-auth (1.3.0-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #890976)
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 21 Feb 2018 10:36:46 +0100
